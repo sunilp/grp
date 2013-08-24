@@ -26,7 +26,7 @@ import org.springframework.web.servlet.view.JstlView;
  
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/views/jsp");
+        viewResolver.setPrefix("/WEB-INF/views/jsp");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
