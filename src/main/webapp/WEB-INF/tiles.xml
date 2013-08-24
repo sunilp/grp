@@ -1,0 +1,22 @@
+<!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ <tiles-definitions>
+ 
+  
+	<definition name="home" template="/WEB-INF/views/jsp/layouts/application.jsp">
+	    <put-attribute name="meta" value="/WEB-INF/views/jsp/layouts/meta.jsp"/>
+	    <put-attribute name="shim" value="/WEB-INF/views/jsp/layouts/shim.jsp"/>
+	    <put-attribute name="header" value="/WEB-INF/views/jsp/layouts/header.jsp"/>
+	    <put-attribute name="marketing" value="/WEB-INF/views/jsp/layouts/marketing.jsp"/>
+	    <put-attribute name="content" value="/WEB-INF/views/jsp/home.jsp"/>
+	    <put-attribute name="footer" value="/WEB-INF/views/jsp/layouts/footer.jsp"/>
+	</definition>
+   
+ 
+	<definition name="*/*" extends="home" >
+	    <put-attribute name="marketing" value=""/>
+	    <put-attribute name="content" value="/WEB-INF/views/jsp/{2}.jsp"/>
+	</definition>
+       
+ </tiles-definitions>  
