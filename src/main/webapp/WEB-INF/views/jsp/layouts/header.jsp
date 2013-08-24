@@ -1,10 +1,13 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <link rel="shortcut icon" href="assets/ico/favicon.png">
     <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
  <link href="assets/css/carousel.css" rel="stylesheet">
+ 
+ 
+ 
 <!-- NAVBAR
 ================================================== -->
 
@@ -19,15 +22,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Project name</a>
+              <a class="navbar-brand" href="#">Job Portal</a>
             </div>
             <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><spring:message code="label.nav.home"></spring:message></a></li>
+                <li><a href="#about"><spring:message code="label.nav.about"/></a></li>
+                <li><a href="#contact"><spring:message code="label.nav.contact"/></a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                
+                  <spring:message code="label.nav.settings"/>
+
+                   <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>

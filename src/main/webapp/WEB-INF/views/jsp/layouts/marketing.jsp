@@ -9,7 +9,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#234:#7a7a7a/text:First slide" >
+          <img src="assets/img/a3.jpg"  >
           <div class="container">
             <div class="carousel-caption">
               <h1>Example headline.</h1>
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#234:#7a7a7a/text:Second slide" alt="Second slide">
+          <img src="assets/img/o1.jpeg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
