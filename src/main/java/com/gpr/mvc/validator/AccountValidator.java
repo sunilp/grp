@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 /**
  * Custom AccountValidator performs the validation of a given account type.
- * Return true if account exists, so we can add to our PRISM watch!
+ * Return true if account exists, so we can add to our watch!
  */
 public class AccountValidator implements ConstraintValidator<Account, String> {
 
