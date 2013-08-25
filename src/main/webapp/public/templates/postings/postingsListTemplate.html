@@ -1,0 +1,5 @@
+<ul>
+  <% _.each(postings, function(posting){ %>
+   <li><a href='<%= posting.get("type") %>'><%= posting.get("company") %></a></li> 
+  <% }); %>
+</ul>

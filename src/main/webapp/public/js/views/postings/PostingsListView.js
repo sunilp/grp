@@ -4,9 +4,9 @@ define([
   'underscore',
   'backbone',
   // Pull in the Collection module from above,
-  'models/project/PostingModel',
-  'collections/projects/PostingsCollection',
-  'text!templates/projects/postingsListTemplate.html'
+  'models/posting/PostingModel',
+  'collections/postings/PostingsCollection',
+  'text!templates/postings/postingsListTemplate.html'
 
 ], function($, _, Backbone, PostingModel, PostingsCollection, postingsListTemplate){
   var PostingsListView = Backbone.View.extend({
