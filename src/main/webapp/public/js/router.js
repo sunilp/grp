@@ -41,6 +41,10 @@ define([
        // We have no matching route, lets display the home page 
      //   var homeView = new HomeView();
        // homeView.render();
+    	console.log(1);
+    	 var postingsView = new PostingsView();
+         postingsView.render();
+
     });
 
    

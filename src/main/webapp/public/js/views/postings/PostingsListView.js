@@ -1,4 +1,4 @@
-// Filename: views/projects/list
+// Filename: views/postings/list
 define([
   'jquery',
   'underscore',
@@ -12,16 +12,17 @@ define([
   var PostingsListView = Backbone.View.extend({
     el: $("#postings-list"),
 
+    
     render: function(){
       
       var data = {
-        projects: this.collection.models,
+        postings: this.collection.models,
         _: _ 
       };
 
-      var compiledTemplate = _.template( projectsListTemplate, data );
+      var compiledTemplate = _.template( postingsListTemplate, data );
       $("#postings-list").html( compiledTemplate ); 
     }
   });
-  return ProjectListView;
+  return PostingsListView;
 });

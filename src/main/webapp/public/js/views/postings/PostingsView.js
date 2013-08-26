@@ -13,13 +13,13 @@ define([
     render: function(){
      // $('.menu li').removeClass('active');
       //$('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-      this.$el.html(projectsTemplate);
+      this.$el.html(postingsTemplate);
 
-      var posting0 = new ProjectModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
-      var posting1 = new ProjectModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
-      var posting2 = new ProjectModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
-      var posting3 = new ProjectModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
-      var posting4 = new ProjectModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting0 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting1 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting2 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting3 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting4 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
       
       var aPostings = [posting0, 
                        posting1,
