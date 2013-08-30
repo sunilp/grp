@@ -29,5 +29,11 @@ sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 # https://toolbelt.heroku.com/debian
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-
+sudo apt-get update
+sudo apt-get -y install python-software-properties
+sudo add-apt-repository ppa:pitti/postgresql
+sudo apt-get update
+ 
+sudo apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2
+sudo apt-get -y install postgresql-server-dev-9.2 libpq-dev
 
