@@ -3,7 +3,7 @@ Web Application which have job portal features
 
 <h2>Outline</h2>
 1. Java EE 7
-2. Spring MVC 3.4
+2. Spring MVC 3.2.4
 
 <h2>Setup</h2>
 TODO
