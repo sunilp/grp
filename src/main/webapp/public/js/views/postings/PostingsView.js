@@ -17,7 +17,7 @@ define([
 
       var posting0 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
       var posting1 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
-      var posting2 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
+      var posting2 = new PostingModel({type: 'job', company: 'eee', qualification : 'CS'}); 
       var posting3 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
       var posting4 = new PostingModel({type: 'job', company: 'Cognizant', qualification : 'CS'}); 
       
