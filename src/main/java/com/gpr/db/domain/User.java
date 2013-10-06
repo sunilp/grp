@@ -10,6 +10,7 @@ import java.util.UUID;
  * User of the Portal
  *
  */
+@SuppressWarnings("serial")
 @Entity(name="appuser")
     public class User implements Serializable, UUIDType {
 

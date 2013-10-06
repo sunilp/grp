@@ -236,7 +236,7 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>localhost</server>
-					<path>/gprweb</path>
+					<path>/</path>
 				</configuration>
 			</plugin>
 			
