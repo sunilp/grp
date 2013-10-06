@@ -11,29 +11,38 @@
 <!-- NAVBAR
 ================================================== -->
 
-    <div class="navbar-wrapper">
+    <div id="topMenu" class="navbar-wrapper">
+        
       <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+        
+        
           <div class="container">
+            
+          
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Job Portal</a>
+              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th-large"></span>Job Portal</a>
             </div>
             <div class="navbar-collapse collapse">
+            
+            
+            
               <ul class="nav navbar-nav navbar-right">
+              
                 <li class="active"><a href="#"><spring:message code="label.nav.home"></spring:message></a></li>
                 <li><a href="#about"><spring:message code="label.nav.about"/></a></li>
                 <li><a href="#contact"><spring:message code="label.nav.contact"/></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                
-                  <spring:message code="label.nav.settings"/>
-
+                	<span class="glyphicon glyphicon-cog"></span>
+                  		<spring:message code="label.nav.settings"/>
+					
                    <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>

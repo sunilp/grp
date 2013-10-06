@@ -3,17 +3,25 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/postings/PostingsView'
-], function($, _, Backbone, PostingsView) {
+  'views/postings/PostingsView',
+  'views/registrations/JsRegistrationView',
+  'views/common/FeaturesView'
+], function($, _, Backbone, PostingsView, JsRegistrationView,FeaturesView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
+      '':'home',
       'postings': 'showPostings',
     //  'users': 'showUsers',
-      
+      'studentRegistration' : 'registerJobSeeker',
       // Default
       '*actions': 'defaultAction'
+    },
+    home: function(){
+      var featuresView = new FeaturesView();
+      featuresView.render();
+       
     }
   });
   
@@ -36,6 +44,16 @@ define([
         // handle loading and displaying data from the server 
   //      var usersView = new UsersView();
   //  });
+  
+  
+      app_router.on('route:registerJobSeeker', function () {
+     
+       var jsRegistrationView = new JsRegistrationView();
+       jsRegistrationView.render();
+       console.log('opening student registration');
+    	
+
+    });
 
     app_router.on('route:defaultAction', function (actions) {
      
@@ -46,6 +64,10 @@ define([
 
     });
 
+
+   Backbone.View.goTo = function (loc) {
+    app_router.navigate(loc, true);
+  };
    
 
     Backbone.history.start();
