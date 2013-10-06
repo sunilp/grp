@@ -18,7 +18,7 @@ define([
     },
     events:{
   'submit .jsRegistrationForm':'registerJS',
-  'click.cancel': 'cancelRegistration'
+  'click .cancel': 'cancelRegistration'
  	},
  	registerJS : function(ev){
  	  ev.preventDefault();
