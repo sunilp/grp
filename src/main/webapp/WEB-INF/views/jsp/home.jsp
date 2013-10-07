@@ -2,7 +2,7 @@
 
 <div id="sampleCont"></div>
 
-<a name="about"></a>
+<div id="aboutContent">
 
       <!-- START THE FEATURETTES -->
 
@@ -43,15 +43,17 @@
         </div>
       </div>
 
-
+</div>
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-  <a name="contact"></a>      
+
+<div id="contactContent">
+     
   <div class="page-header">
   <h1> <small> Contact Us</small></h1>
 </div>
       
       <div id="map-canvas"></div>
-      
+ </div>     
       <hr class="featurette-divider">

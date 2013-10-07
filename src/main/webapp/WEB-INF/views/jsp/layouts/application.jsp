@@ -15,20 +15,23 @@
     <tiles:insertAttribute name="header"/>
     </div>
      
+       <div id="mainContent">
+     
      <div id="marketingContent">
     <tiles:insertAttribute name="marketing"/>
      </div>
         
-    <div class="container">
+    <div id="innerContent" class="container">
       <div id="notify" class="alert alert-info" style="display:none"></div>
     
-    <div id="mainContent">
     <tiles:insertAttribute name="content"/>
     </div>
     
+       </div>
+    
     <tiles:insertAttribute name="footer"/>
     
-     </div>
+
     
 </body>
 

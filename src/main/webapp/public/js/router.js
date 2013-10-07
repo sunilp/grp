@@ -5,8 +5,10 @@ define([
   'backbone',
   'views/postings/PostingsView',
   'views/registrations/JsRegistrationView',
-  'views/common/FeaturesView'
-], function($, _, Backbone, PostingsView, JsRegistrationView,FeaturesView) {
+  'views/common/FeaturesView',
+  'views/common/MarketingView'
+], function($, _, Backbone, PostingsView, JsRegistrationView,FeaturesView
+             ,MarketingView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -19,8 +21,10 @@ define([
       '*actions': 'defaultAction'
     },
     home: function(){
-      var featuresView = new FeaturesView();
-      featuresView.render();
+      var marketingView = new MarketingView();
+          marketingView.render();
+    // var featuresView = new FeaturesView();
+   //   featuresView.render();
        
     }
   });

@@ -12,9 +12,10 @@ define([
     render: function(){
     
    //    $("#marketingContent").hide();
+      
+      this.$el.addClass('container');
       this.$el.html(registrationTemplate);
-       $("#mainContent").focus()
-
+    
     },
     events:{
   'submit .jsRegistrationForm':'registerJS',

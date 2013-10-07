@@ -6,9 +6,11 @@ define([
 ], function($, _, Backbone, featuresTemplate){
 
   var FeaturesView = Backbone.View.extend({
-    el: $("#mainContent"),
+    el: $("#innerContent"),
     render: function(){
+    console.log( this.$el);
       this.$el.html(featuresTemplate);
+      console.log(2);
     }
   });
 
