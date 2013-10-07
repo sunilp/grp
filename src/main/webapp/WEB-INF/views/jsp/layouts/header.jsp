@@ -35,8 +35,8 @@
             
               <ul class="nav navbar-nav navbar-right">
               
-                <li class="active"><a href="#"><spring:message code="label.nav.home"></spring:message></a></li>
-                <li><a href="#about"><spring:message code="label.nav.about"/></a></li>
+                <li class="active"><a href="#home"><spring:message code="label.nav.home"></spring:message></a></li>
+                <li><a href="#about" ><spring:message code="label.nav.about"/></a></li>
                 <li><a href="#contact"><spring:message code="label.nav.contact"/></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
