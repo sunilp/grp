@@ -14,7 +14,6 @@ define([
       var compiledTemplate =  _.template( marketingTemplate, data );
       this.$el.html(compiledTemplate);
       
-console.log(1);      
   //   var featuresView = new FeaturesView();
   //    featuresView.render();
     }

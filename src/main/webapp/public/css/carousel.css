@@ -3,11 +3,21 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
+ /* padding-bottom: 40px; */
+ height: 100%;
   color: #5a5a5a;
 }
 
-
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
