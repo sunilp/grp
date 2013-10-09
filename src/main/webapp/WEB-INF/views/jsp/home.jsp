@@ -54,6 +54,18 @@
   <h1> <small> Contact Us</small></h1>
 </div>
       
-      <div id="map-canvas"></div>
+ <div class="row">
+  <div class="col-md-8">
+    <div id="map-canvas" class="img-thumbnail" ></div>
+  </div>
+  <div class="col-md-4">
+     <div class="page-header">
+     <h1> <small> Registered Office</small></h1>
+      </div>
+  
+  </div>
+</div>
+      
+      
  </div>     
       <hr class="featurette-divider">

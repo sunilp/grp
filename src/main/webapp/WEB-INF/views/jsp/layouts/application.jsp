@@ -11,6 +11,7 @@
   
   </head>
 <body data-spy="scroll" data-target="#topMenu">
+<div id="wrap">
     <div id="header">
     <tiles:insertAttribute name="header"/>
     </div>
@@ -28,7 +29,8 @@
     </div>
     
        </div>
-    
+
+</div>    
     <tiles:insertAttribute name="footer"/>
     
 
