@@ -20,7 +20,7 @@ import java.util.UUID;
  * Controller for User purposes.
  */
 @Controller
-    @RequestMapping("/pu")
+    @RequestMapping("/user")
     public class UserController {
 
     @Autowired
@@ -33,7 +33,7 @@ import java.util.UUID;
 	    if (bindingResult.hasErrors()) {
 		throw new BadRequestException(bindingResult);
 	    }
-	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail());
+	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail(),signupForm.getPassword());
 	}
 
 

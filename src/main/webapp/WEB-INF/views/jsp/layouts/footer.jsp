@@ -16,8 +16,8 @@
     <script src="assets/js/jquery-1.10.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/holder.js"></script>
-    
+   <!-- 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&&callback=initialize" ></script>
-    
+    -->
   <script  src="assets/js/libs/utilities.js"></script>
   

@@ -4,6 +4,7 @@ define([
 	'router'
 ], function($, Backbone, Router){
 
+   var csrf = 'csrf';
 	var SessionModel = Backbone.Model.extend({
 		
 		url : '/session',
@@ -13,7 +14,7 @@ define([
 			//To Set The CSRF Token To Request Header
 			$.ajaxSetup({
 				headers : {
-					'X-CSRF-Token' : 'csrf'
+					'X-CSRF-Token' : csrf
 				}
 			});
 
@@ -72,7 +73,7 @@ define([
 			});
 			login.done(function(response){
 				that.set('authenticated', true);
-				that.set('user', JSON.stringify(response.user));
+				that.set('user', JSON.stringify(response));
 				if(that.get('redirectFrom')){
 					var path = that.get('redirectFrom');
 					that.unset('redirectFrom');

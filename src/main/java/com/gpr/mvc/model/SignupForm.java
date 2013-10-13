@@ -27,8 +27,32 @@ public class SignupForm {
     @SafeHtml
     @Account
 	private String email;
+    
+    @SafeHtml
+    @Size(min = 1, max = 40, message = "Invalid format")
+    private String password;
+    
+    @SafeHtml
+    @Size(min = 1, max = 40, message = "Invalid format")
+    private String confirmPassword;
 
-    // Used for Spring Bean Validation purposes
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	// Used for Spring Bean Validation purposes
     public SignupForm() {};
 
     // Used for unit testing purposes

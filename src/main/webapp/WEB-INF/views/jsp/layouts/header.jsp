@@ -38,6 +38,8 @@
                 <li class="active"><a href="#home"><spring:message code="label.nav.home"></spring:message></a></li>
                 <li><a href="#about" ><spring:message code="label.nav.about"/></a></li>
                 <li><a href="#contact"><spring:message code="label.nav.contact"/></a></li>
+                <li id="loginlogout"><a href="#login">Login</a></li>
+                <!--
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 	<span class="glyphicon glyphicon-cog"></span>
@@ -54,6 +56,8 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
+                -->
+                
               </ul>
             </div>
           </div>

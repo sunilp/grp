@@ -9,9 +9,12 @@ define([
   'views/registrations/JsRegistrationView',
   'views/common/FeaturesView',
   'views/common/MarketingView',
-  'views/common/LoginView'
+  'views/common/LoginView',
+  'views/common/ProfileView',
+  'models/user/UserModel'
 ], function($, _, Backbone,Session,BaseRouter, PostingsView, JsRegistrationView,FeaturesView
-             ,MarketingView,LoginView) {
+             ,MarketingView,LoginView,ProfileView
+             ,UserModel) {
   
   var AppRouter = BaseRouter.extend({
     routes: {
@@ -76,8 +79,23 @@ define([
 		},
 
     home: function(){
-      var marketingView = new MarketingView();
+    
+   		 if(Session.get('authenticated')){
+   		 
+   		 
+			var userModel =  Session.get('user');
+			console.log(userModel);
+			
+			var profileView = new ProfileView({
+						model : userModel
+					});
+		    this.changeView(profileView);
+   		 
+   			 }else{
+    
+     		 var marketingView = new MarketingView();
           marketingView.render();
+          }
        
     },
     fetchError : function(error){
@@ -133,26 +151,23 @@ define([
     });
 
   app_router.on('route:showLogin',  function(){
+   
+         console.log("..in login");
 			var loginView = new LoginView();
 			app_router.changeView(loginView);
 		});
 
   app_router.on('route:showProfile' , function(){
 			var that = app_router;
-			var userModel = new UserModel({
-				id : Session.get('user').id
-			});
-			userModel.fetch()
-				.done(function(){
-					var profileView = new ProfileView({
+			var userModel =  Session.get('user');// new UserModel({
+			//	id : Session.get('user').id
+			//});
+			
+			var profileView = new ProfileView({
 						model : userModel
 					});
-					that.changeView(profileView);
-				})
-				.fail(function(error){
-					//In case that session expired
-					that.fetchError(error);
-				});
+		    that.changeView(profileView);
+				
 		});
   
 

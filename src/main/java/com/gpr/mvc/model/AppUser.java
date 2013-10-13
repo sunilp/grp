@@ -5,13 +5,25 @@ package com.gpr.mvc.model;
  */
 public class AppUser {
 
-    private String firstName;
+	private String id;
+	
+	private String csrf;
+
+	private String firstName;
 
     private String lastName;
 
     private String email;
 
-    public String getFirstName() {
+    public String getCsrf() {
+		return csrf;
+	}
+
+	public void setCsrf(String csrf) {
+		this.csrf = csrf;
+	}
+
+	public String getFirstName() {
         return firstName;
     }
 
@@ -34,4 +46,13 @@ public class AppUser {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    
+
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 }

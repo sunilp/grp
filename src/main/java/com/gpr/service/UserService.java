@@ -26,12 +26,13 @@ import java.util.UUID;
         return convertUsertoAppUser(user);
     }
 
-    public void createUser(String firstName, String lastName, String email) {
+    public void createUser(String firstName, String lastName, String email,String password) {
         User User = new User();
         User.setFirstName(firstName);
         User.setLastName(lastName);
         User.setEmail(email);
         User.setUuid(UUID.randomUUID());
+        User.setPassword(password);
         UserRepository.save(User);
     }
 
@@ -49,6 +50,15 @@ import java.util.UUID;
         }
         return User;
     }
+    
+    public AppUser getUserByEmailAndPassword(String email, String password) throws RecordNotFoundException {
+        User user = UserRepository.findByEmailAndPassword(email, password);
+        if(user == null) {
+            throw new RecordNotFoundException("Invalid Email or Password");
+        }
+        return convertUsertoAppUser(user);
+    }
+
 
     // We convert a domain/entity object (User) to a model object (AppUser). This way,
     // we don't return unnecessary domain/entity data to the client, ex. id or uuid
@@ -58,6 +68,7 @@ import java.util.UUID;
         user.setFirstName(User.getFirstName());
         user.setLastName(User.getLastName());
         user.setEmail(User.getEmail());
+        user.setId(User.getUuid().toString());
         return user;
     }
 }
