@@ -35,8 +35,19 @@ public class SignupForm {
     @SafeHtml
     @Size(min = 1, max = 40, message = "Invalid format")
     private String confirmPassword;
+    
+    @SafeHtml
+    private String accountType;
 
-    public String getPassword() {
+    public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public String getPassword() {
 		return password;
 	}
 

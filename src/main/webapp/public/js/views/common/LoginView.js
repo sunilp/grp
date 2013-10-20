@@ -7,13 +7,19 @@ define([
 
 	var LoginView = BaseView.extend({
        // el: $("#mainContent"),
-		template : _.template(loginTemplate),
+        model : {'status':'', 'statusText': ''},
+        
+		template : _.template(loginTemplate,{'status':'', 'statusText': ''}),
 		
 		events : {
-			'click button' : 'submit'
+			'click button.btn-info' : 'submit'
 		},
 
 		render : function(){
+		
+			
+		this.template = _.template(loginTemplate,this.model);
+		
 		  this.$el.addClass('container');
 		
 			this.$el.html(this.template);
@@ -24,10 +30,13 @@ define([
 			e.preventDefault();
 			var email = $('#email').val();
 			var password = $('#password').val();
-			Session.login({
+			var data = Session.login({
 				email : email,
 				password : password
 			});
+			
+			this.model = data;
+			this.render();
 		}
 	});
 

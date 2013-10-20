@@ -26,14 +26,15 @@ import java.util.UUID;
         return convertUsertoAppUser(user);
     }
 
-    public void createUser(String firstName, String lastName, String email,String password) {
-        User User = new User();
-        User.setFirstName(firstName);
-        User.setLastName(lastName);
-        User.setEmail(email);
-        User.setUuid(UUID.randomUUID());
-        User.setPassword(password);
-        UserRepository.save(User);
+    public void createUser(String firstName, String lastName, String email,String password, String type) {
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setUuid(UUID.randomUUID());
+        user.setPassword(password);
+        user.setType(type);
+        UserRepository.save(user);
     }
 
     public void deleteUser(UUID uuid) throws RecordNotFoundException{

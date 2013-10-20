@@ -16,7 +16,7 @@
               <h1>Free Registration</h1>
               <p>Students of all Government Colleges (under DHE) register themselves in the portal.</p>
               <p>Job Seekers register themselves with all the academic, professional and Experience details.</p>
-              <p><a class="btn btn-large btn-primary" href="#studentRegistration">Register Now</a></p>
+              <p><a class="btn btn-large btn-primary" href="#signup">Register Now</a></p>
             </div>
           </div>
         </div>

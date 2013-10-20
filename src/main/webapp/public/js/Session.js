@@ -66,11 +66,17 @@ define([
 
 		login : function(credentials){
 			var that = this;
+			var returnData ={ status: '', statusText:''};
 			var login = $.ajax({
 				url : this.url + '/login',
 				data : credentials,
-				type : 'POST'
+				type : 'POST',
+				async:false
+			}).error(function(response){
+			console.log(response);
+						  returnData = response;
 			});
+			
 			login.done(function(response){
 				that.set('authenticated', true);
 				that.set('user', JSON.stringify(response));
@@ -85,6 +91,10 @@ define([
 			login.fail(function(){
 				Backbone.history.navigate('login', { trigger : true });
 			});
+			
+			console.log(returnData.status);
+			
+			return returnData;
 		},
 
 		logout : function(callback){

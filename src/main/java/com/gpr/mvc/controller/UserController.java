@@ -33,7 +33,7 @@ import java.util.UUID;
 	    if (bindingResult.hasErrors()) {
 		throw new BadRequestException(bindingResult);
 	    }
-	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail(),signupForm.getPassword());
+	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail(),signupForm.getPassword(),signupForm.getAccountType());
 	}
 
 

@@ -15,3 +15,26 @@ TODO
 
 
 export DATABASE_URL=postgres://username:pwd@hostname:port/db
+
+--
+==> Caveats
+initdb /usr/local/var/postgres -E utf8    # create a database
+postgres -D /usr/local/var/postgres       # serve that database
+postgres -D /usr/local/var/postgres93
+PGDATA=/usr/local/var/postgres postgres   # Éalternatively
+
+If builds of PostgreSQL 9 are failing and you have version 8.x installed,
+you may need to remove the previous version first. See:
+  https://github.com/mxcl/homebrew/issues/issue/2510
+
+To migrate existing data from a previous major version (pre-9.3) of PostgreSQL, see:
+  http://www.postgresql.org/docs/9.3/static/upgrading.html
+
+When installing the postgres gem, including ARCHFLAGS is recommended:
+  ARCHFLAGS="-arch x86_64" gem install pg
+
+To install gems without sudo, see the Homebrew wiki.
+
+To reload postgresql after an upgrade:
+    launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist

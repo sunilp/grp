@@ -11,9 +11,10 @@ define([
   'views/common/MarketingView',
   'views/common/LoginView',
   'views/common/ProfileView',
+  'views/users/SignupView',
   'models/user/UserModel'
 ], function($, _, Backbone,Session,BaseRouter, PostingsView, JsRegistrationView,FeaturesView
-             ,MarketingView,LoginView,ProfileView
+             ,MarketingView,LoginView,ProfileView,SignupView
              ,UserModel) {
   
   var AppRouter = BaseRouter.extend({
@@ -25,6 +26,7 @@ define([
       'profile':'showProfile',
       'postings': 'showPostings',
     //  'users': 'showUsers',
+      'signup' : 'signupUser',
       'studentRegistration' : 'registerJobSeeker',
       // Default
       '*actions': 'defaultAction'
@@ -32,7 +34,7 @@ define([
     requresAuth : ['#profile'],
     	// Routes that should not be accessible if user is authenticated
         // for example, login, register, forgetpasword ...
-    preventAccessWhenAuth : ['#login'],
+    preventAccessWhenAuth : ['#login','#signup'],
     
     before : function(params, next){
 			//Checking if user is authenticated or not
@@ -131,6 +133,11 @@ define([
   //      var usersView = new UsersView();
   //  });
   
+      app_router.on('route:signupUser', function () {
+    
+        var signupView = new SignupView();
+        signupView.render();
+    });
   
       app_router.on('route:registerJobSeeker', function () {
      

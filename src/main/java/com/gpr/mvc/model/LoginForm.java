@@ -1,6 +1,6 @@
 package com.gpr.mvc.model;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.SafeHtml;
 
@@ -8,10 +8,10 @@ public class LoginForm {
 
 	 
 		@SafeHtml
-	    @NotNull
+		 @Size(min = 1, max = 40, message = "Invalid Email")
 		private String email;
-	    @NotNull
 	    @SafeHtml
+	    @Size(min = 1, max = 40, message = "Invalid Password")
 	    private String password;
 	    
 	    public String getEmail() {
