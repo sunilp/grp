@@ -1,5 +1,6 @@
 package com.gpr.mvc.controller;
 
+import com.gpr.integration.SendGrid;
 import com.gpr.mvc.exception.BadRequestException;
 import com.gpr.mvc.exception.RecordNotFoundException;
 import com.gpr.mvc.model.AppUser;
@@ -25,6 +26,10 @@ import java.util.UUID;
 
     @Autowired
 	private UserService userService;
+    
+    private static final String SMTP_AUTH_USER = System.getenv("SENDGRID_USERNAME");
+    private static final String SMTP_AUTH_PWD  = System.getenv("SENDGRID_PASSWORD");
+
 
 	@RequestMapping(method = RequestMethod.POST)
 	    @ResponseStatus(HttpStatus.OK)
@@ -34,6 +39,22 @@ import java.util.UUID;
 		throw new BadRequestException(bindingResult);
 	    }
 	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail(),signupForm.getPassword(),signupForm.getAccountType());
+	    
+	    
+	    try{
+	    	SendGrid sendgrid = new SendGrid(SMTP_AUTH_USER, SMTP_AUTH_PWD);
+
+	    	sendgrid.addTo(signupForm.getEmail());
+	    	sendgrid.setFrom("admin@gpr.com");
+	    	sendgrid.setSubject("Welcome Onboard");
+	    	sendgrid.setText("Thanks for registering to GPR portal, lets get notified for any update.");
+
+	    	sendgrid.send();
+
+	    	
+	    }catch(Exception e){
+	    	e.printStackTrace();
+	    }
 	}
 
 
