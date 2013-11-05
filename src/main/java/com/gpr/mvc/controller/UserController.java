@@ -38,8 +38,12 @@ import java.util.UUID;
 	    if (bindingResult.hasErrors()) {
 		throw new BadRequestException(bindingResult);
 	    }
+	    try{
 	    userService.createUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail(),signupForm.getPassword(),signupForm.getAccountType());
-	    
+	    }catch(org.springframework.dao.DataIntegrityViolationException exception){
+	    	bindingResult.rejectValue("email", "400", "Email ["+ signupForm.getEmail() +"] is already registered!!!");
+	    	throw new BadRequestException(bindingResult);
+	    }
 	    
 	    try{
 	    	SendGrid sendgrid = new SendGrid(SMTP_AUTH_USER, SMTP_AUTH_PWD);

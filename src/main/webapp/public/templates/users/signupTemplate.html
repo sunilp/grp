@@ -4,15 +4,16 @@
 </div>
 
 
-<% if(message !=undefined && message != ''){ %>
+<% if(attributes.message !=undefined && attributes.message != ''){ %>
 <div class="alert alert alert-danger alert-dismissable" >
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
 
-<%= message %>
+<%= attributes.message %>
 
 </div>
 <% } %>
+
 
 
 <form class="form-horizontal signupForm" role="form" >

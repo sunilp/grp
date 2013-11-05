@@ -66,18 +66,19 @@ define([
 
 		login : function(credentials){
 			var that = this;
-			var returnData ={ status: '', statusText:''};
+			//var returnData ={ status: '', statusText:''};
 			var login = $.ajax({
 				url : this.url + '/login',
 				data : credentials,
 				type : 'POST',
-				async:false
+				async:true
 			}).error(function(response){
-			console.log(response);
+			console.log("error",response);
 						  returnData = response;
 			});
 			
 			login.done(function(response){
+				console.log('login done..');
 				that.set('authenticated', true);
 				that.set('user', JSON.stringify(response));
 				if(that.get('redirectFrom')){
@@ -85,16 +86,20 @@ define([
 					that.unset('redirectFrom');
 					Backbone.history.navigate(path, { trigger : true });
 				}else{
-					Backbone.history.navigate('', { trigger : true });
+					Backbone.View.goTo('home');
+					console.log('navigtig to home..');
+					
 				}
 			});
 			login.fail(function(){
+				console.log('login failed..');
+
 				Backbone.history.navigate('login', { trigger : true });
 			});
 			
-			console.log(returnData.status);
+			//console.log(returnData.status);
 			
-			return returnData;
+			//return returnData;
 		},
 
 		logout : function(callback){

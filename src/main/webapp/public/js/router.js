@@ -12,9 +12,10 @@ define([
   'views/common/LoginView',
   'views/common/ProfileView',
   'views/users/SignupView',
+  'views/common/layout/NavbarView',
   'models/user/UserModel'
 ], function($, _, Backbone,Session,BaseRouter, PostingsView, JsRegistrationView,FeaturesView
-             ,MarketingView,LoginView,ProfileView,SignupView
+             ,MarketingView,LoginView,ProfileView,SignupView,NavBarView
              ,UserModel) {
   
   var AppRouter = BaseRouter.extend({
@@ -23,13 +24,13 @@ define([
       '':'home',
       'home':'home',
       'login':'showLogin',
+      'logout':'logout',
       'profile':'showProfile',
       'postings': 'showPostings',
-    //  'users': 'showUsers',
       'signup' : 'signupUser',
       'studentRegistration' : 'registerJobSeeker',
       // Default
-      '*actions': 'defaultAction'
+      '*actions': 'home'
     },
     requresAuth : ['#profile'],
     	// Routes that should not be accessible if user is authenticated
@@ -81,6 +82,7 @@ define([
 		},
 
     home: function(){
+    	console.log('reaching home'); 
     
    		 if(Session.get('authenticated')){
    		 
@@ -92,11 +94,19 @@ define([
 						model : userModel
 					});
 		    this.changeView(profileView);
+		    
+			var navbarView = new NavBarView({model:userModel});
+            navbarView.render();
+
+			
+
    		 
    			 }else{
     
      		 var marketingView = new MarketingView();
-          marketingView.render();
+               marketingView.render();
+             var navbarView = new NavBarView();
+               navbarView.render();
           }
        
     },
@@ -125,6 +135,15 @@ define([
         console.log('inpostings');
 
     });
+    
+    app_router.on('route:logout', function(){
+    	   
+    	Session.logout(function(){
+			Backbone.history.navigate('', { trigger : true });
+		});
+    	
+    });
+
 
    // app_router.on('route:showUsers', function () {
     
@@ -179,6 +198,7 @@ define([
   
 
    Backbone.View.goTo = function (loc) {
+	   console.log(loc, " ..changing location");
     app_router.navigate(loc, true);
   };
    

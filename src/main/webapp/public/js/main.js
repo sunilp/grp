@@ -7,6 +7,7 @@ require.config({
     jquery: 'libs/jquery/jquery-1.10.2.min',
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-min',
+    handlebars: 'libs/handlebars/handlebars-v1.1.0',
     templates: '../templates'
   },
   shim: {
@@ -17,7 +18,13 @@ require.config({
 
 	    underscore: {
 	        exports: "_"
+	    },
+	    
+	    handlebars: {
+	    	exports: "Handlebars"
 	    }
+	    
+	    
 	}
 
 });
